@@ -201,6 +201,18 @@ Notes: Enter your comments here...
                     <CommandLine>cmd /C wmic useraccount where name="" set PasswordExpires=false</CommandLine>
                     <Description>Password Never Expires</Description>
                 </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>4</Order>
+                    <Description>Startup logon turn off</Description>
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <CommandLine>reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableFirstLogonAnimation /t REG_DWORD /d 0 /f</CommandLine>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>5</Order>
+                    <Description>Startup logon turn off</Description>
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <CommandLine>reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Policies\System" /v EnableFirstLogonAnimation /t REG_DWORD /d 0 /f</CommandLine>
+                </SynchronousCommand>
             </FirstLogonCommands>
             <TimeZone>Central Europe Standard Time</TimeZone>
         </component>

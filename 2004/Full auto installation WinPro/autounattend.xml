@@ -161,8 +161,6 @@ Notes: Enter your comments here...
                 <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
                 <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
                 <NetworkLocation>Home</NetworkLocation>
-                <SkipUserOOBE>true</SkipUserOOBE>
-                <SkipMachineOOBE>true</SkipMachineOOBE>
                 <ProtectYourPC>1</ProtectYourPC>
             </OOBE>
             <UserAccounts>

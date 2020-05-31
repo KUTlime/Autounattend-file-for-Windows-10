@@ -39,3 +39,7 @@ If you specify:
 
 in your `autounattend.xml`, you will be asked for a selection of desired version.
 
+# How to find a meaning of any section or key?
+Microsoft provides documentation to unattended installation at its Docs portal, see this [link](https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/).
+
+On the left side, there is a component menu where you can copy/paste any XML element from the `autounattend.xml` file and see what it does.

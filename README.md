@@ -39,7 +39,31 @@ If you specify:
 
 in your `autounattend.xml`, you will be asked for a selection of desired version.
 
-# How to find a meaning of any section or key?
+# How to find a meaning of any XML section or key?
 Microsoft provides documentation to unattended installation at its Docs portal, see this [link](https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/).
 
 On the left side, there is a component menu where you can copy/paste any XML element from the `autounattend.xml` file and see what it does.
+
+# How about Microsoft Accounts?
+The unattended installation feature is designed to Enterprise segment. Microsoft accounts are not supported because of this. Only possible solution is to install local account and convert it into Microsoft account.
+
+In this scenario, you have to *emulate* your user folder structure. If your Microsoft Account create a folder e.g. `john` in `C:\Users\`, so the environmental variable `USERPROFILE` points to `C:\Users\john`, in order to save yourself **a lot** of troubles, you have to create your local account with `username` equal to `john`.
+
+```xml
+<LocalAccounts>
+    <LocalAccount wcm:action="add">
+        <DisplayName>John Doe</DisplayName>
+        <Group>Administrators</Group>
+        <Name>john</Name>
+    </LocalAccount>
+</LocalAccounts>
+```
+
+Why all this? There are software that doesn't correctly use environmental variables and their settings get synchronize across your devices. You can easily end up in the situation when one software works perfectly fine on one device but has some strange path-related errors on another device.
+
+A funny thing is that when I've tried this in Hyper-V (*multiple times*), I wasn't able to log in after conversion of my local account. Combo boxes with user name and password were missing at the login page. It was blank. 
+
+Does make any sense? IMHO it doesn't. It is just pure 💩.
+
+### Conclusion
+If you want to save yourself a lot of troubles and have Microsoft Account out of the box, **you are stuck with attended installation**.

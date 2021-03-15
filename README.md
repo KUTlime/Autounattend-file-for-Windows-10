@@ -28,6 +28,9 @@ If your Windows Image Installation file contains more than one Windows version i
 
 Microsoft provides [generic keys](https://docs.microsoft.com/en-us/windows-server/get-started/kmsclientkeys) which can be used to determine a version that would be installed.
 
+# Links
+[Windows AFG](http://www.windowsafg.com)
+
 If you specify:
 
 ```xml
